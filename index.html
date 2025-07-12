@@ -38,6 +38,18 @@
         padding: 80px 60px;
         position: relative;
         overflow: hidden;
+        animation: fadeInUp 1s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     
     .letter-paper::before {
@@ -71,6 +83,18 @@
         letter-spacing: 4px;
         margin-bottom: 10px;
         text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        animation: slideInDown 0.8s ease-out 0.3s both;
+    }
+    
+    @keyframes slideInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
     
     .subtitle {
@@ -79,6 +103,7 @@
         font-weight: 300;
         margin-bottom: 30px;
         font-style: italic;
+        animation: slideInDown 0.8s ease-out 0.5s both;
     }
     
     .main-headline {
@@ -91,6 +116,7 @@
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 2px;
+        animation: slideInDown 0.8s ease-out 0.7s both;
     }
     
     .content {
@@ -107,6 +133,18 @@
         padding: 20px;
         border: 3px solid #d32f2f;
         background: rgba(211, 47, 47, 0.05);
+        animation: pulse 2s infinite;
+        transition: all 0.3s ease;
+    }
+    
+    .opening-statement:hover {
+        background: rgba(211, 47, 47, 0.1);
+        transform: scale(1.02);
+    }
+    
+    @keyframes pulse {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.4); }
+        50% { box-shadow: 0 0 0 10px rgba(211, 47, 47, 0); }
     }
     
     .body-text {
@@ -114,6 +152,12 @@
         margin-bottom: 25px;
         text-align: justify;
         color: #2a2a2a;
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out forwards;
+    }
+    
+    @keyframes fadeIn {
+        to { opacity: 1; }
     }
     
     .body-text strong {
@@ -129,6 +173,102 @@
         font-style: italic;
         font-size: 1.2rem;
         color: #333;
+        transition: all 0.3s ease;
+        transform: translateX(-10px);
+        opacity: 0;
+        animation: slideInLeft 0.8s ease-out 1s forwards;
+    }
+    
+    @keyframes slideInLeft {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    
+    .endorsements-section {
+        margin: 50px 0;
+        padding: 40px;
+        background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+        border-radius: 12px;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    
+    .endorsements-title {
+        font-family: 'Oswald', sans-serif;
+        font-size: 2.2rem;
+        color: #d32f2f;
+        text-align: center;
+        margin-bottom: 40px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+    }
+    
+    .endorsements-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: #d32f2f;
+    }
+    
+    .endorsements-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-top: 40px;
+    }
+    
+    .endorsement-card {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        border-left: 5px solid #d32f2f;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        position: relative;
+    }
+    
+    .endorsement-card::before {
+        content: '"';
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        font-size: 4rem;
+        color: #d32f2f;
+        opacity: 0.3;
+        font-family: 'Crimson Text', serif;
+    }
+    
+    .endorsement-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    
+    .endorsement-quote {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 20px;
+        font-style: italic;
+    }
+    
+    .endorsement-author {
+        font-size: 1rem;
+        color: #666;
+        text-align: right;
+        border-top: 1px solid #eee;
+        padding-top: 15px;
+    }
+    
+    .endorsement-author strong {
+        color: #d32f2f;
+        font-size: 1.1rem;
     }
     
     .highlight-section {
@@ -138,6 +278,8 @@
         margin: 40px -20px;
         border-radius: 8px;
         text-align: center;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease-out 1.2s forwards;
     }
     
     .highlight-section h2 {
@@ -163,6 +305,13 @@
         margin: 10px;
         flex: 1;
         min-width: 200px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .stat-item:hover {
+        background: rgba(255,255,255,0.2);
+        transform: translateY(-5px);
     }
     
     .stat-number {
@@ -171,6 +320,11 @@
         font-weight: 700;
         color: #ffeb3b;
         display: block;
+        transition: all 0.3s ease;
+    }
+    
+    .stat-item:hover .stat-number {
+        transform: scale(1.1);
     }
     
     .stat-label {
@@ -185,6 +339,8 @@
         margin: 50px -20px;
         text-align: center;
         border-radius: 8px;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease-out 1.4s forwards;
     }
     
     .mission-statement h2 {
@@ -203,12 +359,12 @@
         text-align: center;
         border-radius: 8px;
         border: 3px solid #1a1a1a;
+        opacity: 0;
+        animation: fadeInUp 0.8s ease-out 1.6s forwards;
     }
     
     .cta-button {
         display: inline-block;
-        background: #d32f2f;
-        color: white;
         padding: 15px 40px;
         text-decoration: none;
         font-family: 'Oswald', sans-serif;
@@ -222,10 +378,34 @@
         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     }
     
-    .cta-button:hover {
+    .cta-button.primary {
+        background: #d32f2f;
+        color: white;
+        transform: scale(1.1);
+        animation: glow 2s infinite alternate;
+    }
+    
+    @keyframes glow {
+        from { box-shadow: 0 4px 15px rgba(0,0,0,0.2), 0 0 20px rgba(211, 47, 47, 0.3); }
+        to { box-shadow: 0 6px 20px rgba(0,0,0,0.3), 0 0 30px rgba(211, 47, 47, 0.6); }
+    }
+    
+    .cta-button.secondary {
+        background: transparent;
+        color: #1a1a1a;
+        border: 2px solid #1a1a1a;
+    }
+    
+    .cta-button.primary:hover {
         background: #b71c1c;
+        transform: scale(1.15) translateY(-2px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
+    
+    .cta-button.secondary:hover {
+        background: #1a1a1a;
+        color: #ffeb3b;
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
     }
     
     .footer-signature {
@@ -234,6 +414,8 @@
         font-size: 1.2rem;
         font-style: italic;
         color: #666;
+        opacity: 0;
+        animation: fadeIn 0.8s ease-out 1.8s forwards;
     }
     
     .atomic-symbol {
@@ -247,6 +429,39 @@
         background-size: 20px 20px;
         border-radius: 50%;
         z-index: 1;
+        animation: rotate 30s linear infinite;
+    }
+    
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+    
+    .floating-element {
+        position: absolute;
+        opacity: 0.1;
+        animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+    }
+    
+    .floating-element:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+    .floating-element:nth-child(2) { top: 60%; left: 85%; animation-delay: 2s; }
+    .floating-element:nth-child(3) { top: 80%; left: 15%; animation-delay: 4s; }
+    
+    /* Scroll-triggered animations */
+    .scroll-animate {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease-out;
+    }
+    
+    .scroll-animate.visible {
+        opacity: 1;
+        transform: translateY(0);
     }
     
     @media (max-width: 768px) {
@@ -272,6 +487,32 @@
             margin: 40px -10px;
             padding: 30px 20px;
         }
+        
+        .cta-button.primary {
+            transform: scale(1.05);
+        }
+        
+        .cta-button.primary:hover {
+            transform: scale(1.1) translateY(-2px);
+        }
+        
+        .endorsements-container {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        
+        .endorsements-section {
+            margin: 30px -10px;
+            padding: 30px 20px;
+        }
+        
+        .endorsement-card {
+            padding: 20px;
+        }
+        
+        .endorsements-title {
+            font-size: 1.8rem;
+        }
     }
 </style>
 ```
@@ -281,7 +522,11 @@
     <div class="container">
         <div class="letter-paper">
             <div class="atomic-symbol"></div>
+            <div class="floating-element" style="width: 30px; height: 30px; background: radial-gradient(circle, #d32f2f 1px, transparent 1px); background-size: 4px 4px; border-radius: 50%;"></div>
+            <div class="floating-element" style="width: 20px; height: 20px; background: radial-gradient(circle, #ffeb3b 1px, transparent 1px); background-size: 3px 3px; border-radius: 50%;"></div>
+            <div class="floating-element" style="width: 25px; height: 25px; background: radial-gradient(circle, #666 1px, transparent 1px); background-size: 5px 5px; border-radius: 50%;"></div>
 
+```
         <div class="header">
             <h1 class="magazine-title">Nuclear Times</h1>
             <p class="subtitle">The Magazine for Nuclear Disarmament</p>
@@ -294,19 +539,18 @@
                 80 years ago, the biggest artificial explosion in history announced the start of the nuclear age. With Trinity, The Bomb was here. <strong>It is time for The Bomb to go.</strong>
             </div>
             
-            <p class="body-text">
+            <p class="body-text scroll-animate">
                 We are relaunching Nuclear Times magazine because the next two decades must be the time when humanity ends the nuclear curse and persistent threat of annihilation. We intend Nuclear Times to be integral to organizing, reporting on, and supporting that mission.
-            <br/>
+                <br/>
                 <strong><a href="https://nucleartimes.bigcartel.com/product/subscription">Become our first subscriber.</a></strong>
-    
             </p>
             
-            <div class="quote-block">
+            <div class="quote-block scroll-animate">
                 "You may reasonably expect a man to walk a tightrope safely for ten minutes; it would be unreasonable to do so without accident for two hundred years."
                 <br><em>— Bertrand Russell, Anti-Nuclear Manifesto</em>
             </div>
             
-            <div class="highlight-section">
+            <div class="highlight-section scroll-animate">
                 <h2>The Deadly Truth</h2>
                 <p style="font-size: 1.2rem; margin-bottom: 30px;">
                     It turns out man was unable to safely walk the nuclear tightrope at all. In addition to the mass murder committed in Hiroshima and Nagasaki, nuclear weapons have caused millions of casualties through both short and long-term effects of nuclear testing.
@@ -328,15 +572,40 @@
                 </div>
             </div>
             
-            <p class="body-text">
+            <p class="body-text scroll-animate">
                 <strong>Nuclear Times originally launched in 1982</strong>, at the height of the Nuclear Freeze, as the publication for the nuclear disarmament movement. We launch at a similar moment, with threats increasing, but a strong and vibrant movement growing in opposition to nuclear weapons.
             </p>
             
-            <p class="body-text">
+            <p class="body-text scroll-animate">
                 This magazine will be <strong>opinionated</strong>. It will <strong>challenge the status quo</strong>. It will celebrate victories and illuminate the people on the frontlines of this movement. It will be provocative and imperfect. But mostly, it will be all of ours — the readers, writers, artists, activists dedicated to a world without nuclear weapons.
             </p>
             
-            <div class="mission-statement">
+            <div class="endorsements-section scroll-animate">
+                <h3 class="endorsements-title">Support for Nuclear Times</h3>
+                <div class="endorsements-container">
+                    <div class="endorsement-card">
+                        <div class="endorsement-quote">
+                            "In today's frenzied digital media landscape, it is hard for consequential news to break through. But when it comes to nuclear weapons and their impact on all of us, there is no time to spare. That's why it's crucial that the Nuclear Times is making a comeback at this uncertain moment in our history. Just as it did in the 1980s, this old school magazine will chronicle the anti-nuclear movement's resurgence in ways no website can."
+                        </div>
+                        <div class="endorsement-author">
+                            <strong>Eric Singer</strong><br>
+                            <em>Author of Oppenheimer and the Atomic Bomb</em>
+                        </div>
+                    </div>
+                    
+                    <div class="endorsement-card">
+                        <div class="endorsement-quote">
+                            "As we organize against the new arms race and face a mounting threat of nuclear weapons use today, we need a publication that can share information and updates with everyone involved and help to mobilize coordinated public pressure for disarmament. What better model for this than Nuclear Times, which played an indispensable role in building the nuclear freeze movement of the 1980s."
+                        </div>
+                        <div class="endorsement-author">
+                            <strong>David Cortright</strong><br>
+                            <em>Former Executive Director of SANE, Board of Directors-Win Without War</em>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mission-statement scroll-animate">
                 <h2>Our Mission</h2>
                 <p style="font-size: 1.3rem; margin-bottom: 20px;">
                     Like the original Nuclear Times, our intention is for the magazine to fail due to the movement's success. The end of the Cold War and the massive success of the Nuclear Freeze Movement led to the shuttering of the magazine as the 1980s came to a close.
@@ -346,23 +615,23 @@
                 </p>
             </div>
             
-            <p class="body-text">
+            <p class="body-text scroll-animate">
                 The 1990s did see massive reductions in warheads, decommissioning of much of the nuclear apparatus, and agreement to end open-air testing with the Comprehensive Nuclear-Test-Ban Treaty (CTBT) of 1996. <strong>All these gains are now under threat.</strong>
             </p>
             
-            <p class="body-text">
+            <p class="body-text scroll-animate">
                 Three nations (India, Pakistan, North Korea) became nuclear-armed since 1998. Several nuclear treaties have been broken or abandoned and even the CTBT is on the verge of collapse. Still, we see reason for hope. More nations continue to reject nuclear weapons through the Treaty on the Prohibition of Nuclear Weapons.
             </p>
             
-            <div class="call-to-action">
+            <div class="call-to-action scroll-animate">
                 <h2 style="font-family: 'Oswald', sans-serif; font-size: 2.2rem; margin-bottom: 20px; text-transform: uppercase;">
                     The Time Has Come
                 </h2>
                 <p style="font-size: 1.3rem; margin-bottom: 30px;">
                     This generation of activists face a monumental, but clear mission: to carry the memory of the hibakusha forward in a movement that rejects and dismantles nuclear weapons. To 'freeze' nuclear weapons is not enough; it's time to abolish these weapons for good.
                 </p>
-                <a href="https://nucleartimes.bigcartel.com/product/subscription" class="cta-button">Subscribe Now</a>
-                <a href="https://impactcomms.org/nucleartimes#rec1049859021" class="cta-button">Donate</a>
+                <a href="https://nucleartimes.bigcartel.com/product/subscription" class="cta-button primary">Subscribe Now</a>
+                <a href="https://impactcomms.org/nucleartimes#rec1049859021" class="cta-button secondary">Support Our Mission</a>
             </div>
             
             <div class="footer-signature">
@@ -370,10 +639,85 @@
                     Today, we again start the Nuclear Times, in order to end them.
                 </p>
             </div>
-            <p><strong><a href="https://impactcomms.org/nucleartimes">Learn more.</a></strong</p>
+            <p class="scroll-animate"><strong><a href="https://impactcomms.org/nucleartimes">Learn more.</a></strong></p>
         </div>
     </div>
 </div>
+
+<script>
+    // Scroll-triggered animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.scroll-animate').forEach(el => {
+        observer.observe(el);
+    });
+
+    // Add counter animation to statistics
+    function animateCounter(element, target, duration = 2000) {
+        const start = 0;
+        const startTime = performance.now();
+        
+        function updateCounter(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            const current = Math.floor(progress * target);
+            element.textContent = current.toLocaleString() + (element.textContent.includes('+') ? '+' : '');
+            
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            }
+        }
+        
+        requestAnimationFrame(updateCounter);
+    }
+
+    // Trigger counter animation when stats section is visible
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statNumbers = entry.target.querySelectorAll('.stat-number');
+                statNumbers.forEach(stat => {
+                    const target = parseInt(stat.textContent.replace(/[^\d]/g, ''));
+                    animateCounter(stat, target);
+                });
+                statsObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const statsSection = document.querySelector('.stats');
+    if (statsSection) {
+        statsObserver.observe(statsSection);
+    }
+
+    // Add subtle parallax effect to atomic symbol
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const symbol = document.querySelector('.atomic-symbol');
+        if (symbol) {
+            symbol.style.transform = `rotate(${scrolled * 0.1}deg)`;
+        }
+    });
+
+    // Add hover sound effect simulation (visual feedback)
+    document.querySelectorAll('.cta-button, .stat-item').forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            button.style.transition = 'all 0.2s ease';
+        });
+    });
+</script>
 ```
 
 </body>
