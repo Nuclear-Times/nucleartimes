@@ -33,6 +33,9 @@ body {
     border-bottom: 3px solid #d32f2f;
     padding-bottom: 20px;
     margin-bottom: 40px;
+    background: linear-gradient(135deg, #ded4b6 0%, #cf8f8c 100%);
+    padding: 30px 20px 20px;
+    border-radius: 8px 8px 0 0;
 }
 
 .logo {
@@ -89,16 +92,18 @@ body {
 }
 
 .content-block {
-    background-color: #f9f9f9;
-    border-left: 4px solid #d32f2f;
+    background: linear-gradient(135deg, #f9f9f9 0%, rgba(222, 212, 182, 0.3) 100%);
+    border-left: 4px solid #cf8f8c;
     padding: 25px;
     margin-bottom: 30px;
+    border-radius: 0 8px 8px 0;
 }
 
 .content-block h3 {
     font-size: 24px;
-    color: #d32f2f;
+    color: #cf8f8c;
     margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
 }
 
 .content-block p {
@@ -133,16 +138,23 @@ body {
 }
 
 .event-card {
-    background-color: white;
+    background: linear-gradient(135deg, white 0%, rgba(222, 212, 182, 0.2) 100%);
     border: 1px solid #ddd;
-    border-left: 4px solid #d32f2f;
+    border-left: 4px solid #cf8f8c;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(207, 143, 140, 0.2);
+    border-radius: 0 8px 8px 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(207, 143, 140, 0.3);
 }
 
 .event-card h4 {
     font-size: 20px;
-    color: #d32f2f;
+    color: #cf8f8c;
     margin-bottom: 10px;
 }
 
@@ -159,30 +171,34 @@ body {
 
 .cta-button {
     display: inline-block;
-    background-color: #d32f2f;
+    background: linear-gradient(135deg, #d32f2f 0%, #cf8f8c 100%);
     color: white;
     padding: 12px 24px;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 25px;
     font-weight: bold;
     margin: 10px 10px 10px 0;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
     font-size: 16px;
+    box-shadow: 0 2px 8px rgba(207, 143, 140, 0.3);
 }
 
 .cta-button:hover {
-    background-color: #b71c1c;
+    background: linear-gradient(135deg, #b71c1c 0%, #a67b78 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(207, 143, 140, 0.5);
 }
 
 .cta-button.secondary {
-    background-color: transparent;
-    color: #d32f2f;
-    border: 2px solid #d32f2f;
+    background: linear-gradient(135deg, transparent 0%, rgba(222, 212, 182, 0.3) 100%);
+    color: #cf8f8c;
+    border: 2px solid #cf8f8c;
 }
 
 .cta-button.secondary:hover {
-    background-color: #d32f2f;
+    background: linear-gradient(135deg, #cf8f8c 0%, #ded4b6 100%);
     color: white;
+    transform: translateY(-2px);
 }
 
 .key-dates {
@@ -190,9 +206,10 @@ body {
     justify-content: space-around;
     text-align: center;
     margin-bottom: 40px;
-    background-color: #2c2c2c;
+    background: linear-gradient(135deg, #2c2c2c 0%, #cf8f8c 100%);
     color: white;
     padding: 30px;
+    border-radius: 8px;
 }
 
 .date-block {
@@ -202,8 +219,9 @@ body {
 .date-block .date {
     font-size: 32px;
     font-weight: bold;
-    color: #d32f2f;
+    color: #f4a460;
     margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .date-block .event {
@@ -224,9 +242,10 @@ body {
     text-align: center;
     margin: 30px 0;
     padding: 20px;
-    border-left: 4px solid #d32f2f;
-    background-color: #f9f9f9;
+    border-left: 4px solid #f4a460;
+    background: linear-gradient(135deg, rgba(222, 212, 182, 0.4) 0%, rgba(207, 143, 140, 0.2) 100%);
     font-weight: 300;
+    border-radius: 0 8px 8px 0;
 }
 
 .historical-photo {
@@ -249,11 +268,12 @@ body {
 }
 
 .casualty-stats {
-    background-color: #2c2c2c;
+    background: linear-gradient(135deg, #2c2c2c 0%, #ded4b6 50%, #cf8f8c 100%);
     color: white;
     padding: 30px;
     margin: 30px 0;
     text-align: center;
+    border-radius: 8px;
 }
 
 .city-stats {
@@ -265,13 +285,16 @@ body {
 
 .city-block {
     padding: 20px;
-    border-left: 4px solid #d32f2f;
+    border-left: 4px solid #f4a460;
+    background: rgba(244, 164, 96, 0.1);
+    border-radius: 0 8px 8px 0;
 }
 
 .city-block h3 {
-    color: #d32f2f;
+    color: #f4a460;
     font-size: 24px;
     margin-bottom: 15px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .stat-line {
@@ -280,9 +303,10 @@ body {
 }
 
 .stat-number {
-    color: #d32f2f;
+    color: #f4a460;
     font-weight: bold;
     font-size: 18px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .footer {
