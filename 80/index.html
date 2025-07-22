@@ -12,7 +12,7 @@
             box-sizing: border-box;
         }
 
-
+```
 body {
     font-family: 'Times New Roman', serif;
     line-height: 1.6;
@@ -298,6 +298,69 @@ body {
     margin-bottom: 20px;
 }
 
+.magazine-covers {
+    position: relative;
+    margin: 40px 0;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.magazine-covers::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        url('https://www.nucleartimes.com/80/assets/hiroshima.jpeg'),
+        url('https://www.nucleartimes.com/80/assets/nagasaki.jpeg');
+    background-size: 200px auto, 200px auto;
+    background-position: 
+        10% 20%,
+        90% 80%;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+.featured-cover {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+}
+
+.featured-cover h3 {
+    color: #d32f2f;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
+.featured-cover img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border: 3px solid #d32f2f;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.featured-cover img:hover {
+    transform: scale(1.05);
+}
+
+.cover-caption {
+    font-style: italic;
+    color: #555;
+    margin-top: 15px;
+    font-size: 16px;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 15px;
@@ -327,8 +390,16 @@ body {
     .city-stats {
         grid-template-columns: 1fr;
     }
-}
 
+    .featured-cover img {
+        max-width: 250px;
+    }
+
+    .magazine-covers::before {
+        background-size: 150px auto, 150px auto;
+    }
+}
+```
 
 </style>
 
@@ -342,7 +413,7 @@ body {
             <p class="anniversary-subtitle">Remembering Hiroshima & Nagasaki</p>
         </header>
 
-
+```
 <p class="intro-text">
     This summer marks 80 years since the United States conducted the Trinity nuclear test and dropped atomic bombs on Hiroshima and Nagasaki. Join us in commemorating these pivotal moments and renewing our commitment to nuclear abolition.
 </p>
@@ -386,6 +457,14 @@ body {
 <div class="historical-photo">
     <img src="https://i0.wp.com/blog.nuclearsecrecy.com/wp-content/uploads/2013/03/Nagasaki-October-1945-2.jpg" alt="Nagasaki aftermath, October 1945">
     <p class="photo-caption">Nagasaki, October 1945 - The devastating aftermath of the atomic bombing</p>
+</div>
+
+<div class="magazine-covers">
+    <div class="featured-cover">
+        <h3>From Our Archives: Past Commemorations</h3>
+        <img src="https://www.nucleartimes.com/80/assets/1985cover.jpeg" alt="Nuclear Times 1985 40th Anniversary Cover">
+        <p class="cover-caption">Nuclear Times 40th Anniversary Issue - Continuing the Legacy of Peace</p>
+    </div>
 </div>
 
 <section class="section">
@@ -486,7 +565,7 @@ body {
     <a href="https://www.nucleartimes.com" class="cta-button">Learn More</a>
     <a href="#support" class="cta-button secondary">Support Our Mission</a>
 </footer>
-```
+
 
 </div>
 
