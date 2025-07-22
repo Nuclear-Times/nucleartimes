@@ -8,514 +8,515 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Oswald:wght@300;500;700&display=swap');
 
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-    
-    body {
-        font-family: 'Crimson Text', serif;
-        line-height: 1.6;
-        color: #1a1a1a;
-        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
-        min-height: 100vh;
-        overflow-x: hidden;
-    }
-    
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 40px 20px;
-        position: relative;
-    }
-    
-    .letter-paper {
-        background: #fafafa;
-        border-radius: 8px;
-        box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 100px rgba(255,255,255,0.1);
-        padding: 80px 60px;
-        position: relative;
-        overflow: hidden;
-        animation: fadeInUp 1s ease-out;
-    }
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    .letter-paper::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: 
-            linear-gradient(90deg, transparent 79px, #e0e0e0 79px, #e0e0e0 81px, transparent 81px),
-            linear-gradient(180deg, transparent 39px, #f0f0f0 39px, #f0f0f0 41px, transparent 41px);
-        background-size: 80px 40px;
-        opacity: 0.3;
-        pointer-events: none;
-    }
-    
-    .header {
-        text-align: center;
-        margin-bottom: 60px;
-        position: relative;
-        z-index: 2;
-    }
-    
-    .magazine-title {
-        font-family: 'Oswald', sans-serif;
-        font-size: 4rem;
-        font-weight: 700;
-        color: #d32f2f;
-        text-transform: uppercase;
-        letter-spacing: 4px;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        animation: slideInDown 0.8s ease-out 0.3s both;
-    }
-    
-    @keyframes slideInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    .subtitle {
-        font-size: 1.8rem;
-        color: #666;
-        font-weight: 300;
-        margin-bottom: 30px;
-        font-style: italic;
-        animation: slideInDown 0.8s ease-out 0.5s both;
-    }
-    
-    .main-headline {
-        font-family: 'Oswald', sans-serif;
-        font-size: 3.5rem;
-        font-weight: 500;
-        color: #1a1a1a;
-        line-height: 1.1;
-        margin-bottom: 30px;
-        text-align: center;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        animation: slideInDown 0.8s ease-out 0.7s both;
-    }
-    
-    .content {
-        position: relative;
-        z-index: 2;
-    }
-    
-    .opening-statement {
-        font-size: 1.4rem;
-        font-weight: 600;
-        color: #d32f2f;
-        margin-bottom: 30px;
-        text-align: center;
-        padding: 20px;
-        border: 3px solid #d32f2f;
-        background: rgba(211, 47, 47, 0.05);
-        animation: pulse 2s infinite;
-        transition: all 0.3s ease;
-    }
-    
-    .opening-statement:hover {
-        background: rgba(211, 47, 47, 0.1);
-        transform: scale(1.02);
-    }
-    
-    @keyframes pulse {
-        0%, 100% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.4); }
-        50% { box-shadow: 0 0 0 10px rgba(211, 47, 47, 0); }
-    }
-    
-    .body-text {
-        font-size: 1.1rem;
-        margin-bottom: 25px;
-        text-align: justify;
-        color: #2a2a2a;
-        opacity: 0;
-        animation: fadeIn 0.8s ease-out forwards;
-    }
-    
-    @keyframes fadeIn {
-        to { opacity: 1; }
-    }
-    
-    .body-text strong {
-        color: #d32f2f;
-        font-weight: 600;
-    }
-    
-    .quote-block {
-        background: #f5f5f5;
-        border-left: 6px solid #d32f2f;
-        padding: 25px;
-        margin: 30px 0;
-        font-style: italic;
-        font-size: 1.2rem;
-        color: #333;
-        transition: all 0.3s ease;
-        transform: translateX(-10px);
-        opacity: 0;
-        animation: slideInLeft 0.8s ease-out 1s forwards;
-    }
-    
-    @keyframes slideInLeft {
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-    
-    .endorsements-section {
-        margin: 50px 0;
-        padding: 40px;
-        background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
-        border-radius: 12px;
-        border: 1px solid #e0e0e0;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    }
-    
-    .endorsements-title {
-        font-family: 'Oswald', sans-serif;
-        font-size: 2.2rem;
-        color: #d32f2f;
-        text-align: center;
-        margin-bottom: 40px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        position: relative;
-    }
-    
-    .endorsements-title::after {
-        content: '';
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 3px;
-        background: #d32f2f;
-    }
-    
-    .endorsements-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-        margin-top: 40px;
-    }
-    
-    .endorsement-card {
-        background: white;
-        padding: 30px;
-        border-radius: 8px;
-        border-left: 5px solid #d32f2f;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        transition: all 0.3s ease;
-        position: relative;
-    }
-    
-    .endorsement-card::before {
-        content: '"';
-        position: absolute;
-        top: -10px;
-        left: 20px;
-        font-size: 4rem;
-        color: #d32f2f;
-        opacity: 0.3;
-        font-family: 'Crimson Text', serif;
-    }
-    
-    .endorsement-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    }
-    
-    .endorsement-quote {
-        font-size: 1.05rem;
-        line-height: 1.6;
-        color: #333;
-        margin-bottom: 20px;
-        font-style: italic;
-    }
-    
-    .endorsement-author {
-        font-size: 1rem;
-        color: #666;
-        text-align: right;
-        border-top: 1px solid #eee;
-        padding-top: 15px;
-    }
-    
-    .endorsement-author strong {
-        color: #d32f2f;
-        font-size: 1.1rem;
-    }
-    
-    .highlight-section {
-        background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
-        color: white;
-        padding: 40px;
-        margin: 40px -20px;
-        border-radius: 8px;
-        text-align: center;
-        opacity: 0;
-        animation: fadeInUp 0.8s ease-out 1.2s forwards;
-    }
-    
-    .highlight-section h2 {
-        font-family: 'Oswald', sans-serif;
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    
-    .stats {
-        display: flex;
-        justify-content: space-around;
-        margin: 40px 0;
-        flex-wrap: wrap;
-    }
-    
-    .stat-item {
-        text-align: center;
-        padding: 20px;
-        background: rgba(255,255,255,0.1);
-        border-radius: 8px;
-        margin: 10px;
-        flex: 1;
-        min-width: 200px;
-        transition: all 0.3s ease;
-        cursor: pointer;
-    }
-    
-    .stat-item:hover {
-        background: rgba(255,255,255,0.2);
-        transform: translateY(-5px);
-    }
-    
-    .stat-number {
-        font-family: 'Oswald', sans-serif;
-        font-size: 3rem;
-        font-weight: 700;
-        color: #ffeb3b;
-        display: block;
-        transition: all 0.3s ease;
-    }
-    
-    .stat-item:hover .stat-number {
-        transform: scale(1.1);
-    }
-    
-    .stat-label {
-        font-size: 1.1rem;
-        margin-top: 10px;
-    }
-    
-    .mission-statement {
-        background: #1a1a1a;
-        color: #fafafa;
-        padding: 50px;
-        margin: 50px -20px;
-        text-align: center;
-        border-radius: 8px;
-        opacity: 0;
-        animation: fadeInUp 0.8s ease-out 1.4s forwards;
-    }
-    
-    .mission-statement h2 {
-        font-family: 'Oswald', sans-serif;
-        font-size: 2.8rem;
-        margin-bottom: 30px;
-        color: #ffeb3b;
-        text-transform: uppercase;
-    }
-    
-    .call-to-action {
-        background: linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%);
-        color: #1a1a1a;
-        padding: 40px;
-        margin: 40px -20px;
-        text-align: center;
-        border-radius: 8px;
-        border: 3px solid #1a1a1a;
-        opacity: 0;
-        animation: fadeInUp 0.8s ease-out 1.6s forwards;
-    }
-    
-    .cta-button {
-        display: inline-block;
-        padding: 15px 40px;
-        text-decoration: none;
-        font-family: 'Oswald', sans-serif;
-        font-size: 1.3rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        border-radius: 4px;
-        margin: 20px 10px;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-    
-    .cta-button.primary {
-        background: #d32f2f;
-        color: white;
-        transform: scale(1.1);
-        animation: glow 2s infinite alternate;
-    }
-    
-    @keyframes glow {
-        from { box-shadow: 0 4px 15px rgba(0,0,0,0.2), 0 0 20px rgba(211, 47, 47, 0.3); }
-        to { box-shadow: 0 6px 20px rgba(0,0,0,0.3), 0 0 30px rgba(211, 47, 47, 0.6); }
-    }
-    
-    .cta-button.secondary {
-        background: transparent;
-        color: #1a1a1a;
-        border: 2px solid #1a1a1a;
-    }
-    
-    .cta-button.primary:hover {
-        background: #b71c1c;
-        transform: scale(1.15) translateY(-2px);
-        box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-    }
-    
-    .cta-button.secondary:hover {
-        background: #1a1a1a;
-        color: #ffeb3b;
-        transform: translateY(-2px);
-    }
-    
-    .footer-signature {
-        text-align: center;
-        margin-top: 60px;
-        font-size: 1.2rem;
-        font-style: italic;
-        color: #666;
-        opacity: 0;
-        animation: fadeIn 0.8s ease-out 1.8s forwards;
-    }
-    
-    .atomic-symbol {
-        position: absolute;
-        top: -50px;
-        right: -50px;
-        width: 200px;
-        height: 200px;
-        opacity: 0.05;
-        background: radial-gradient(circle, #d32f2f 2px, transparent 2px);
-        background-size: 20px 20px;
-        border-radius: 50%;
-        z-index: 1;
-        animation: rotate 30s linear infinite;
-    }
-    
-    @keyframes rotate {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-    
-    .floating-element {
-        position: absolute;
-        opacity: 0.1;
-        animation: float 6s ease-in-out infinite;
-    }
-    
-    @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-20px); }
-    }
-    
-    .floating-element:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
-    .floating-element:nth-child(2) { top: 60%; left: 85%; animation-delay: 2s; }
-    .floating-element:nth-child(3) { top: 80%; left: 15%; animation-delay: 4s; }
-    
-    /* Scroll-triggered animations */
-    .scroll-animate {
+```
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Crimson Text', serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.letter-paper {
+    background: #fafafa;
+    border-radius: 8px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 100px rgba(255,255,255,0.1);
+    padding: 80px 60px;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
         opacity: 0;
         transform: translateY(30px);
-        transition: all 0.6s ease-out;
     }
-    
-    .scroll-animate.visible {
+    to {
         opacity: 1;
         transform: translateY(0);
     }
-    
-    @media (max-width: 768px) {
-        .letter-paper {
-            padding: 40px 30px;
-        }
-        
-        .magazine-title {
-            font-size: 2.5rem;
-        }
-        
-        .main-headline {
-            font-size: 2.5rem;
-        }
-        
-        .stats {
-            flex-direction: column;
-        }
-        
-        .highlight-section,
-        .mission-statement,
-        .call-to-action {
-            margin: 40px -10px;
-            padding: 30px 20px;
-        }
-        
-        .cta-button.primary {
-            transform: scale(1.05);
-        }
-        
-        .cta-button.primary:hover {
-            transform: scale(1.1) translateY(-2px);
-        }
-        
-        .endorsements-container {
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-        
-        .endorsements-section {
-            margin: 30px -10px;
-            padding: 30px 20px;
-        }
-        
-        .endorsement-card {
-            padding: 20px;
-        }
-        
-        .endorsements-title {
-            font-size: 1.8rem;
-        }
+}
+
+.letter-paper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(90deg, transparent 79px, #e0e0e0 79px, #e0e0e0 81px, transparent 81px),
+        linear-gradient(180deg, transparent 39px, #f0f0f0 39px, #f0f0f0 41px, transparent 41px);
+    background-size: 80px 40px;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.magazine-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #d32f2f;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    animation: slideInDown 0.8s ease-out 0.3s both;
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
     }
-</style>
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.subtitle {
+    font-size: 1.8rem;
+    color: #666;
+    font-weight: 300;
+    margin-bottom: 30px;
+    font-style: italic;
+    animation: slideInDown 0.8s ease-out 0.5s both;
+}
+
+.main-headline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: slideInDown 0.8s ease-out 0.7s both;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+.opening-statement {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #d32f2f;
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 20px;
+    border: 3px solid #d32f2f;
+    background: rgba(211, 47, 47, 0.05);
+    animation: pulse 2s infinite;
+    transition: all 0.3s ease;
+}
+
+.opening-statement:hover {
+    background: rgba(211, 47, 47, 0.1);
+    transform: scale(1.02);
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.4); }
+    50% { box-shadow: 0 0 0 10px rgba(211, 47, 47, 0); }
+}
+
+.body-text {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-align: justify;
+    color: #2a2a2a;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.body-text strong {
+    color: #d32f2f;
+    font-weight: 600;
+}
+
+.quote-block {
+    background: #f5f5f5;
+    border-left: 6px solid #d32f2f;
+    padding: 25px;
+    margin: 30px 0;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #333;
+    transition: all 0.3s ease;
+    transform: translateX(-10px);
+    opacity: 0;
+    animation: slideInLeft 0.8s ease-out 1s forwards;
+}
+
+@keyframes slideInLeft {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.endorsements-section {
+    margin: 50px 0;
+    padding: 40px;
+    background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.endorsements-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.2rem;
+    color: #d32f2f;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.endorsements-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #d32f2f;
+}
+
+.endorsements-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.endorsement-card {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 5px solid #d32f2f;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.endorsement-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 4rem;
+    color: #d32f2f;
+    opacity: 0.3;
+    font-family: 'Crimson Text', serif;
+}
+
+.endorsement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.endorsement-quote {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.endorsement-author {
+    font-size: 1rem;
+    color: #666;
+    text-align: right;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+.endorsement-author strong {
+    color: #d32f2f;
+    font-size: 1.1rem;
+}
+
+.highlight-section {
+    background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+    color: white;
+    padding: 40px;
+    margin: 40px -20px;
+    border-radius: 8px;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 1.2s forwards;
+}
+
+.highlight-section h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    margin: 10px;
+    flex: 1;
+    min-width: 200px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.stat-item:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-5px);
+}
+
+.stat-number {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffeb3b;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover .stat-number {
+    transform: scale(1.1);
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.mission-statement {
+    background: #1a1a1a;
+    color: #fafafa;
+    padding: 50px;
+    margin: 50px -20px;
+    text-align: center;
+    border-radius: 8px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 1.4s forwards;
+}
+
+.mission-statement h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: #ffeb3b;
+    text-transform: uppercase;
+}
+
+.call-to-action {
+    background: linear-gradient(135deg, #ffeb3b 0%, #ffc107 100%);
+    color: #1a1a1a;
+    padding: 40px;
+    margin: 40px -20px;
+    text-align: center;
+    border-radius: 8px;
+    border: 3px solid #1a1a1a;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 1.6s forwards;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    margin: 20px 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.cta-button.primary {
+    background: #d32f2f;
+    color: white;
+    transform: scale(1.1);
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 4px 15px rgba(0,0,0,0.2), 0 0 20px rgba(211, 47, 47, 0.3); }
+    to { box-shadow: 0 6px 20px rgba(0,0,0,0.3), 0 0 30px rgba(211, 47, 47, 0.6); }
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: #1a1a1a;
+    border: 2px solid #1a1a1a;
+}
+
+.cta-button.primary:hover {
+    background: #b71c1c;
+    transform: scale(1.15) translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.cta-button.secondary:hover {
+    background: #1a1a1a;
+    color: #ffeb3b;
+    transform: translateY(-2px);
+}
+
+.footer-signature {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #666;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 1.8s forwards;
+}
+
+.atomic-symbol {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    opacity: 0.05;
+    background: radial-gradient(circle, #d32f2f 2px, transparent 2px);
+    background-size: 20px 20px;
+    border-radius: 50%;
+    z-index: 1;
+    animation: rotate 30s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.floating-element {
+    position: absolute;
+    opacity: 0.1;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+.floating-element:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.floating-element:nth-child(2) { top: 60%; left: 85%; animation-delay: 2s; }
+.floating-element:nth-child(3) { top: 80%; left: 15%; animation-delay: 4s; }
+
+/* Scroll-triggered animations */
+.scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.scroll-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .letter-paper {
+        padding: 40px 30px;
+    }
+    
+    .magazine-title {
+        font-size: 2.5rem;
+    }
+    
+    .main-headline {
+        font-size: 2.5rem;
+    }
+    
+    .stats {
+        flex-direction: column;
+    }
+    
+    .highlight-section,
+    .mission-statement,
+    .call-to-action {
+        margin: 40px -10px;
+        padding: 30px 20px;
+    }
+    
+    .cta-button.primary {
+        transform: scale(1.05);
+    }
+    
+    .cta-button.primary:hover {
+        transform: scale(1.1) translateY(-2px);
+    }
+    
+    .endorsements-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .endorsements-section {
+        margin: 30px -10px;
+        padding: 30px 20px;
+    }
+    
+    .endorsement-card {
+        padding: 20px;
+    }
+    
+    .endorsements-title {
+        font-size: 1.8rem;
+    }
+}
 ```
 
+</style>
 </head>
 <body>
     <div class="container">
@@ -540,8 +541,6 @@
             
             <p class="body-text scroll-animate">
                 We are relaunching Nuclear Times magazine because the next two decades must be the time when humanity ends the nuclear curse and persistent threat of annihilation. We intend Nuclear Times to be integral to organizing, reporting on, and supporting that mission.
-                <br/>
-                <strong><a href="https://nucleartimes.bigcartel.com/product/subscription">Become our first subscriber.</a></strong>
             </p>
             
             <div class="quote-block scroll-animate">
@@ -629,8 +628,7 @@
                 <p style="font-size: 1.3rem; margin-bottom: 30px;">
                     This generation of activists face a monumental, but clear mission: to carry the memory of the hibakusha forward in a movement that rejects and dismantles nuclear weapons. To 'freeze' nuclear weapons is not enough; it's time to abolish these weapons for good.
                 </p>
-                <a href="https://nucleartimes.bigcartel.com/product/subscription" class="cta-button primary">Subscribe Now</a>
-                <a href="https://impactcomms.org/nucleartimes#rec1049859021" class="cta-button secondary">Support Our Mission</a>
+                <a href="https://impactcomms.org/nucleartimes#rec1049859021" class="cta-button primary">Support Our Mission</a>
             </div>
             
             <div class="footer-signature">
